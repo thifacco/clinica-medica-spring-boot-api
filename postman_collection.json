@@ -26,13 +26,13 @@
 			"response": []
 		},
 		{
-			"name": "Médicos",
+			"name": "Cadastrar médico",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"nome\": \"Rodrigo Ferreira\",\n    \"email\": \"rodrigo.ferreira@voll.med\",\n    \"crm\": \"123456\",\n    \"especialidade\": \"ortopedia\",\n    \"endereco\": {\n        \"logradouro\": \"rua 1\",\n        \"bairro\": \"bairro\",\n        \"cep\": \"12345678\",\n        \"cidade\": \"Brasilia\",\n        \"uf\": \"DF\",\n        \"numero\": \"1\",\n        \"complemento\": \"complemento\"\n    }\n}",
+					"raw": "{\n    \"nome\": \"Jackson Teller\",\n    \"email\": \"jax.teller@voll.med\",\n    \"telefone\": \"19999998888\",\n    \"crm\": \"776683\",\n    \"especialidade\": \"CARDIOLOGIA\",\n    \"endereco\": {\n        \"logradouro\": \"Rua Forli\",\n        \"bairro\": \"Residencial Roland I\",\n        \"cep\": \"13484562\",\n        \"cidade\": \"Limeira\",\n        \"uf\": \"SP\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,6 +48,51 @@
 					"port": "8080",
 					"path": [
 						"medicos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de médicos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/medicos?size=1&page=0&sort=nome,crm",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"medicos"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "sort",
+							"value": "nome,crm"
+						}
 					]
 				}
 			},
